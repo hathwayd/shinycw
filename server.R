@@ -1,7 +1,7 @@
 library(shiny)
 library(datasets)
 
-# Define server logic required to draw a histogram
+
 shinyServer(function(input, output) {
   
   values <- reactiveValues()
@@ -20,6 +20,7 @@ shinyServer(function(input, output) {
   output$F_result <- renderText({
     paste(round(values$f))
   })
+  # Show reference plots
   output$plot1 <-renderPlot({
   par(mfrow=c(2,2))
       plot(swiss$Fertility,swiss$Education,ylab="Factor1: Education",xlab="Fertility")
